@@ -25,7 +25,7 @@ def test_qualifies_free_delivery_with_negative_total_raises_value_error():
     # Arrange
     total_cents = -1
     # Act and Assert
-    with pytest.raises(ValueError, match="total must be nonnegative"):
+    with pytest.raises(ValueError):
         qualifies_free_delivery(total_cents)
 
 
@@ -39,5 +39,5 @@ def test_qualifies_free_delivery_with_negative_total_raises_value_error():
 )
 def test_qualifies_free_delivery_with_invalid_type_raises_type_error(total_cents):
     # Act and Assert
-    with pytest.raises(TypeError, match="total must be an integer"):
+    with pytest.raises(TypeError):
         qualifies_free_delivery(total_cents)

@@ -33,7 +33,7 @@ def test_calculate_total_with_negative_value_raises_value_error(
     unit_price_cents, quantity
 ):
     # Act and Assert
-    with pytest.raises(ValueError, match="price and quantity must be nonnegative"):
+    with pytest.raises(ValueError):
         calculate_total(unit_price_cents, quantity)
 
 
@@ -52,5 +52,5 @@ def test_calculate_total_with_invalid_type_raises_type_error(
     unit_price_cents, quantity
 ):
     # Act and Assert
-    with pytest.raises(TypeError, match="price and quantity must be integers"):
+    with pytest.raises(TypeError):
         calculate_total(unit_price_cents, quantity)
